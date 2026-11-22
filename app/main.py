@@ -99,7 +99,7 @@ def health():
     try:
         with db.conexion() as conn:
             conn.execute("SELECT 1")
-        return {"status": "ok", "servicio": "events", "db": "ok"}
+        return {"status": "ok", "servicio": "events", "version": '2.0.0-demo', "db": "ok"}
     except Exception as e:
         log.error(f"Health: sin conexión a la BD: {e}")
         return JSONResponse(
